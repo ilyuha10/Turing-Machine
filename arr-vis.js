@@ -10,7 +10,7 @@ function ArrayVisualizer(container, arr, initalVal) {
     self.container.append('<ul id="tape" class="pagination"></ul>');
     self.rootElem = self.container.children().first();
     self.arr.forEach(function(x, i) {
-      self.rootElem.append('<li><a href="#" id="' + i + '">' + x +'</a></li>')
+      self.rootElem.append('<li><a href="#" id="' + i + '">' + " " +'</a></li>')
     });
   }(this)
 }
@@ -26,6 +26,7 @@ ArrayVisualizer.prototype.clearSelection = function () {
 
 ArrayVisualizer.prototype.updateArray = function (newArr) {
   this.rootElem.children().each(function(i, elem) {
+    //console.log(newArr[i]);
     $(elem).children().first().text(newArr[i]);
   })
 };
